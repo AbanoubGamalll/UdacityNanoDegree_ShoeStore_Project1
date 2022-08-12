@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.fwd.shoestoreapp.R
 import com.fwd.shoestoreapp.databinding.FragmentLoginBinding
 
@@ -16,8 +17,13 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        var binding: FragmentLoginBinding=   DataBindingUtil.inflate(inflater,R.layout.fragment_login, container, false)
-
+        val binding: FragmentLoginBinding=   DataBindingUtil.inflate(inflater,R.layout.fragment_login, container, false)
+        with(binding)
+        {
+            txtSignup.setOnClickListener{ findNavController().navigate(R.id.action_loginFragment_to_welcomeScreenFragment) }
+            btnLogin.setOnClickListener{ findNavController().navigate(R.id.action_loginFragment_to_welcomeScreenFragment)
+            }
+        }
         return binding.root
     }
 
