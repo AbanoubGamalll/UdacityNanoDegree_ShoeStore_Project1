@@ -17,14 +17,17 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding: FragmentLoginBinding=   DataBindingUtil.inflate(inflater,R.layout.fragment_login, container, false)
+        val binding: FragmentLoginBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         with(binding)
         {
-            txtSignup.setOnClickListener{ findNavController().navigate(R.id.action_loginFragment_to_welcomeScreenFragment) }
-            btnLogin.setOnClickListener{ findNavController().navigate(R.id.action_loginFragment_to_welcomeScreenFragment)
-            }
+            txtSignup.setOnClickListener { goToWelcome() }
+            btnLogin.setOnClickListener { goToWelcome() }
         }
         return binding.root
     }
+
+    private fun goToWelcome() = findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeScreenFragment())
+
 
 }
