@@ -18,4 +18,5 @@ class WelcomeScreenFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_welcome_screen, container, false)
     }
 
+
 }
