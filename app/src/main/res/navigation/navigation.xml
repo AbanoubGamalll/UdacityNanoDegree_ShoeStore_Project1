@@ -30,11 +30,26 @@
         tools:layout="@layout/fragment_instruction" >
         <action
             android:id="@+id/action_instructionFragment_to_shoeLisFragment"
-            app:destination="@id/shoeLisFragment" />
+            app:destination="@id/shoeLisFragment"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoeLisFragment"
         android:name="com.fwd.shoestoreapp.home.ShoeLisFragment"
         android:label="fragment_shoe_lis"
-        tools:layout="@layout/fragment_shoe_lis" />
+        tools:layout="@layout/fragment_shoe_lis" >
+        <action
+            android:id="@+id/action_shoeLisFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+        <action
+            android:id="@+id/action_shoeLisFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.fwd.shoestoreapp.home.AddItemFragment"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" />
 </navigation>
