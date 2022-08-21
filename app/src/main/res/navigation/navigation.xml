@@ -51,5 +51,10 @@
         android:id="@+id/addItemFragment"
         android:name="com.fwd.shoestoreapp.home.AddItemFragment"
         android:label="fragment_add_item"
-        tools:layout="@layout/fragment_add_item" />
+        tools:layout="@layout/fragment_add_item" >
+        <action
+            android:id="@+id/action_addItemFragment_to_shoeLisFragment"
+            app:destination="@id/shoeLisFragment"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
 </navigation>
