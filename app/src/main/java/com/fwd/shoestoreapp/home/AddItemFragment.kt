@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fwd.shoestoreapp.R
@@ -21,9 +22,7 @@ class AddItemFragment : Fragment() {
     ): View {
         val binding: FragmentAddItemBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_add_item, container, false)
-
-        val viewModel: ShoListViewModel =
-            ViewModelProvider(requireActivity())[ShoListViewModel::class.java]
+         val viewModel: ShoListViewModel by activityViewModels()
 
         binding.btnSave.setOnClickListener {
             binding.apply {

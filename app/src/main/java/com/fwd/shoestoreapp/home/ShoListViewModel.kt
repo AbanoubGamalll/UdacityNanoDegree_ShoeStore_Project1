@@ -7,8 +7,6 @@ import androidx.lifecycle.ViewModel
 
 class ShoListViewModel : ViewModel() {
     private var _list = MutableLiveData<MutableList<ShoeModel>>()
-//    val list: LiveData<MutableList<ShoeModel>>
-//        get() = _list
 
     private var _items = MutableLiveData<Int>()
     val items: LiveData<Int>
@@ -24,7 +22,7 @@ class ShoListViewModel : ViewModel() {
     }
 
     fun lastItem(): ShoeModel {
-       return (_list.value?.get(_items.value!!)) ?: ShoeModel("", "", "", "defult")
+        return (_list.value?.get(_items.value!!)) ?: ShoeModel("", "", "", "defult")
     }
 
 }

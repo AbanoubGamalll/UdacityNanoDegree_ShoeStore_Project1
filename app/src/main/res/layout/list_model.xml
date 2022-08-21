@@ -9,15 +9,17 @@
             name="shoeItem"
             type="com.fwd.shoestoreapp.home.ShoeModel" />
     </data>
+    <!-- using constraintlayout becouse it fill in any screen size by it constrains-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
         <TextView
             android:id="@+id/txt_Name"
             android:layout_width="wrap_content"
+            tools:text="Name: "
             android:layout_height="wrap_content"
             android:text="@{@string/mutable_name(shoeItem.Name)}"
             app:layout_constraintBottom_toTopOf="@+id/txt_Company"
@@ -30,6 +32,8 @@
             android:id="@+id/txt_Company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            tools:text="Copany: "
+
             android:text="@{@string/mutable_company(shoeItem.Company)}"
             app:layout_constraintBottom_toTopOf="@+id/txt_Size"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,11 +48,15 @@
             android:text="@{@string/mutable_size(shoeItem.Size)}"
             app:layout_constraintBottom_toTopOf="@+id/txt_Description"
             app:layout_constraintEnd_toEndOf="parent"
+            tools:text="size: "
+
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_Company" />
 
         <TextView
+            tools:text="description: "
+
             android:id="@+id/txt_Description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -2,13 +2,9 @@ package com.fwd.shoestoreapp.home
 
 import android.os.Bundle
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.DataBindingUtil.inflate
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.fwd.shoestoreapp.R
 import com.fwd.shoestoreapp.databinding.FragmentShoeLisBinding
@@ -18,7 +14,7 @@ import com.fwd.shoestoreapp.databinding.ListModelBinding
 class ShoeLisFragment : Fragment() {
 
     private lateinit var binding: FragmentShoeLisBinding
-    private lateinit var viewModel: ShoListViewModel
+    private val viewModel: ShoListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,18 +27,15 @@ class ShoeLisFragment : Fragment() {
             findNavController().navigate(ShoeLisFragmentDirections.actionShoeLisFragmentToAddItemFragment())
         }
 
-        viewModel = ViewModelProvider(requireActivity())[ShoListViewModel::class.java]
-
-        viewModel.items.observe(requireActivity(), Observer {
-            addItemToView(inflater,container)
-        })
-
+        viewModel.items.observe(requireActivity()) { addItemToView(inflater, container) }
         setHasOptionsMenu(true)
         return binding.root
     }
 
     private fun addItemToView(inflater: LayoutInflater, container: ViewGroup?) {
-
+        val b: ListModelBinding = inflate(inflater, R.layout.list_model, container, false)
+        b.shoeItem = viewModel.lastItem()
+        binding.linearLayoutt.addView(b.root)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
