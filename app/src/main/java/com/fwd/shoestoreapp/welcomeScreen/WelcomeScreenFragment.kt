@@ -16,7 +16,7 @@ class WelcomeScreenFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding : FragmentWelcomeScreenBinding
         = DataBindingUtil.inflate(inflater,R.layout.fragment_welcome_screen,container,false)
 
