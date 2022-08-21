@@ -25,18 +25,9 @@ class AddItemFragment : Fragment() {
         val viewModel: ShoListViewModel by activityViewModels()
 
         binding.lifecycleOwner = viewLifecycleOwner
-
+        binding.shoListViewModel=viewModel
         binding.btnSave.setOnClickListener {
-            binding.apply {
-                viewModel.addItem(
-                    ShoeModel(
-                        edtName.text.toString(),
-                        edtCompany.text.toString(),
-                        edtSize.text.toString(),
-                        edtDescription.text.toString()
-                    )
-                )
-            }
+            viewModel.addItem()
             nav()
         }
 

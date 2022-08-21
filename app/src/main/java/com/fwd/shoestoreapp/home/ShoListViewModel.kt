@@ -14,16 +14,25 @@ class ShoListViewModel : ViewModel() {
     val items: LiveData<Int>
         get() = _items
 
+    var Name: String = ""
+    var Company: String = ""
+    var Size: String = ""
+    var Description: String = ""
+
     init {
         _list.value = mutableListOf()
     }
 
-    fun addItem(s: ShoeModel) {
-        _list.value?.add(s)
-    }
-    fun addNum() {
+    fun addItem() {
+        _list.value?.add(ShoeModel(Name, Company, Size, Description))
         _items.value = (_items.value?.plus(1)) ?: 0
+        Name = ""
+        Company = ""
+        Size = ""
+        Description = ""
     }
+
+
     fun lastItem(): ShoeModel {
         return (_list.value?.get(_items.value!!)) ?: ShoeModel("", "", "", "defult")
     }

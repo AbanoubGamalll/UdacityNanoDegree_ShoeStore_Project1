@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="ShoeList"
+            name="ShoListViewModel"
             type="com.fwd.shoestoreapp.home.ShoListViewModel" />
     </data>
 
@@ -23,6 +23,7 @@
             android:hint="@string/name"
             android:inputType="text"
             android:minHeight="48dp"
+            android:text="@={ShoListViewModel.Name}"
             app:layout_constraintBottom_toTopOf="@+id/edt_Company"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +37,7 @@
             android:hint="@string/company"
             android:inputType="text"
             android:minHeight="48dp"
+            android:text="@={ShoListViewModel.Company}"
             app:layout_constraintBottom_toTopOf="@+id/edt_Size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +51,7 @@
             android:hint="@string/size"
             android:inputType="number"
             android:minHeight="48dp"
+            android:text="@={ShoListViewModel.Size}"
             app:layout_constraintBottom_toTopOf="@+id/edt_Description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +65,7 @@
             android:hint="@string/description"
             android:inputType="text"
             android:minHeight="48dp"
+            android:text="@={ShoListViewModel.Description}"
             app:layout_constraintBottom_toTopOf="@+id/btn_save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
