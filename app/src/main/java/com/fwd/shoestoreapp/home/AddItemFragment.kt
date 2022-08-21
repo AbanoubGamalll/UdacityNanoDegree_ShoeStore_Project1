@@ -22,7 +22,9 @@ class AddItemFragment : Fragment() {
     ): View {
         val binding: FragmentAddItemBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_add_item, container, false)
-         val viewModel: ShoListViewModel by activityViewModels()
+        val viewModel: ShoListViewModel by activityViewModels()
+
+        binding.lifecycleOwner = viewLifecycleOwner
 
         binding.btnSave.setOnClickListener {
             binding.apply {
@@ -37,6 +39,8 @@ class AddItemFragment : Fragment() {
             }
             nav()
         }
+
+
 
         binding.btnCancel.setOnClickListener {
             nav()

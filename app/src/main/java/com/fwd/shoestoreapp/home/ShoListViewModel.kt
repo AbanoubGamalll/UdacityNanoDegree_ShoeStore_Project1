@@ -1,6 +1,8 @@
 package com.fwd.shoestoreapp.home
 
 import android.util.Log
+import androidx.databinding.BindingAdapter
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,11 +20,13 @@ class ShoListViewModel : ViewModel() {
 
     fun addItem(s: ShoeModel) {
         _list.value?.add(s)
+    }
+    fun addNum() {
         _items.value = (_items.value?.plus(1)) ?: 0
     }
-
     fun lastItem(): ShoeModel {
         return (_list.value?.get(_items.value!!)) ?: ShoeModel("", "", "", "defult")
     }
+
 
 }

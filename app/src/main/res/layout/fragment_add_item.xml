@@ -3,8 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!-- using constraintlayout becouse it fill in any screen size by it constrains-->
+    <data>
 
+        <variable
+            name="ShoeList"
+            type="com.fwd.shoestoreapp.home.ShoListViewModel" />
+    </data>
+
+    <!-- using constraintlayout becouse it fill in any screen size by it constrains-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
