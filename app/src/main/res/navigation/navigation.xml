@@ -18,5 +18,23 @@
         android:id="@+id/welcomeScreenFragment"
         android:name="com.fwd.shoestoreapp.welcomeScreen.WelcomeScreenFragment"
         android:label="fragment_welcome_screen"
-        tools:layout="@layout/fragment_welcome_screen" />
+        tools:layout="@layout/fragment_welcome_screen" >
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_instructionFragment"
+            app:destination="@id/instructionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionFragment"
+        android:name="com.fwd.shoestoreapp.instructionScreen.InstructionFragment"
+        android:label="fragment_instruction"
+        tools:layout="@layout/fragment_instruction" >
+        <action
+            android:id="@+id/action_instructionFragment_to_shoeLisFragment"
+            app:destination="@id/shoeLisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeLisFragment"
+        android:name="com.fwd.shoestoreapp.home.ShoeLisFragment"
+        android:label="fragment_shoe_lis"
+        tools:layout="@layout/fragment_shoe_lis" />
 </navigation>

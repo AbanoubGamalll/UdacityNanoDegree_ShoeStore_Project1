@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".welcomeScreen.WelcomeScreenFragment">
+    tools:context=".instructionScreen.InstructionFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_in_shoe_app"
+            android:text="@string/instruction_you_will_need"
             android:textColor="#000000"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/btn_Next"
@@ -36,12 +36,11 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/let_s_start_and_know_what_you_want_to_but"
+            android:text="@string/you_have_button_to_add_new_item"
             app:layout_constraintBottom_toTopOf="@+id/btn_Next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

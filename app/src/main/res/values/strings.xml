@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Shoe Store App</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_have_button_to_add_new_item">You have + button to add new item</string>
+    <string name="next">Next</string>
+    <string name="instruction_you_will_need">instruction you will need</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="don_t_have_account">Don\'t have account:</string>
+    <string name="welcome_in_shoe_app">Welcome in Shoe App</string>
+    <string name="let_s_start_and_know_what_you_want_to_but">Let\'s start and know what you want to buy</string>
 </resources>
